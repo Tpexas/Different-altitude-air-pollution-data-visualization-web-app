@@ -67,7 +67,7 @@ class ReportController extends Controller
         $minLng = $droneAndSensorData->min('longitude');
         $maxLng = $droneAndSensorData->max('longitude');
         
-        $api = 'a1f1c82b022e408d160b9d8afd2c0d43';
+        $api = '';
         $start = strtotime($droneAndSensorData[0]->date . $droneAndSensorData[0]->time);
         $end = $start+3600;
         $lat = $droneAndSensorData[$coordinateCenter]->latitude;
