@@ -39,7 +39,7 @@
 </div>
 
 <script>
-    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxYjMzYmFiMi0yZWM3LTRiZGYtODU1Yi0wYzBhYjE4OWMyZTUiLCJpZCI6MTMyNzY1LCJpYXQiOjE2ODA5NzQ3MTV9.Q5G9hR7IjLsrz1Oo0p8O5_LN19FsUW7udto2whJuGLc';
+    Cesium.Ion.defaultAccessToken = '';
     const viewer = new Cesium.Viewer('cesiumContainer', {
   terrainProvider: Cesium.createWorldTerrain()
 });
