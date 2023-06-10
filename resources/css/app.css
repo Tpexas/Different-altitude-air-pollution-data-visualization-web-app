@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    table{
+        @apply rounded-lg
+    }
+    div.shrink {
+        @apply md:px-4 py-2 p-1
+    }
+    .tarsos_taskai th{
+        @apply px-1
+    }
+
+    nav div a{
+        @apply border-y mx-2 border-black/25 rounded-none hover:bg-gray-200
+    }
+}
