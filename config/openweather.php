@@ -8,7 +8,7 @@ return [
      *
      */
 
-    'api_key' => env('OPENWAETHER_API_KEY', "a3bde1e296fcac0b2f474db52c726af5"),
+    'api_key' => env('OPENWAETHER_API_KEY', ""),
 
     /**
      * Current weather API endpoint : https://api.openweathermap.org/data/2.5/weather.
