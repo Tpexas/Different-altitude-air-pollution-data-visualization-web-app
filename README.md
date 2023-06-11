@@ -1,66 +1,55 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Air Pollution Visualization Web App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This web application was developed as a project for a bachelor's degree, aiming to provide air pollution visualization from different heights and positions using technologies such as Laravel, Blade, TailwindCSS, Chart.js, CesiumJS, OpenWeather API, and Leaflet.js.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Air pollution visualization from different heights and positions
+- Validation of uploaded files:
+  - Files must be in CSV format
+  - Files need to have required data columns
+  - Files must have matching time rows
+- Importing of uploaded CSV files to the database using Laravel Excel package
+- Exporting of the collected drone and Arduino sensor data into an single Excel file for further analysis
+- Visualization of imported data:
+  - Data displayed in tables showing the 5 biggest pollution points
+  - Display of maximum, minimum, and average pollution levels
+  - Display of flight time, average temperature, and humidity
+- Integration with OpenWeather API to retrieve pollution information for recorded locations during flights
+- Visualization of Air Quality Index (AQI) and pollutant levels using color-coded cards
+- Generation of diagrams using Chart.js based on collected air pollution data for each pollutant
+- Map display using Leaflet.js with an air pollution grid:
+  - Grid squares are colored based on the average air pollution in each square
+  - Clickable grid squares display information about the average pollution and altitude of the record
+- Wind direction vector layer on the map, displaying wind speed information
+- Cesium integration for drawing drone flight lines in 3D:
+  - Flight lines are colored based on the air pollution at each position
+  - Hovering over the line displays air pollution level, altitude, and coordinates at that point
+- Admin role with additional privileges to edit and delete generated visualizations
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Usage
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. Register a new user account or log in with an existing account.
+2. Upload two CSV files containing air pollution data collected by the drone and Arduino sensors.
+   - Ensure that the files are in the required CSV format and have the necessary data columns.
+   - The files must have matching time rows.
+   - The app will validate the files before importing them into the database.
+3. Once the files are imported, the web app will display the visualization of the air pollution data.
+   - You can explore the data in tables, which show the 5 biggest pollution points, maximum, minimum, and average pollution levels, flight time, average temperature, and humidity.
+   - The OpenWeather API integration provides additional pollution information for recorded locations during flights.
+   - The app also generates diagrams using Chart.js based on the collected air pollution data for each pollutant.
+   - The map view, powered by Leaflet.js, displays an air pollution grid with color-coded squares representing the average air pollution in each square.
+     - Clicking on a square will show information about the average pollution and altitude of the record.
+   - The map also includes a wind direction vector layer from API and displays the wind speed.
+   - Using Cesium, the app draws the drone flight line in 3D, which is colored based on the air pollution at each position.
+     - Hovering over the line will display the air pollution level, altitude, and coordinates at that point.
+4. If you have an admin role, you can edit and delete the generated visualizations as needed.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![screencapture-127-0-0-1-8000-ataskaitos-21-2023-06-11-23_55_12](https://github.com/Tpexas/Different-altitude-air-pollution-data-visualization-web-app/assets/103386420/e0651939-6c2a-4bdf-af48-f8116772f22b)
+![Ekrano nuotrauka 2023-06-11 235616](https://github.com/Tpexas/Different-altitude-air-pollution-data-visualization-web-app/assets/103386420/a2e9286e-26b9-409d-8faf-49f2dedc9a67)
+![Ekrano nuotrauka 2023-06-11 235403](https://github.com/Tpexas/Different-altitude-air-pollution-data-visualization-web-app/assets/103386420/6d08e695-ebe9-441f-8eed-3eddff12e6a0)
+![Ekrano nuotrauka 2023-06-11 235759](https://github.com/Tpexas/Different-altitude-air-pollution-data-visualization-web-app/assets/103386420/2f2aff3c-aed2-4ec2-bea6-6e75d0a8741d)
+![database](https://github.com/Tpexas/Different-altitude-air-pollution-data-visualization-web-app/assets/103386420/5512378b-c99d-4bd8-8888-a3b9c1d0b4bd)
+![Ekrano nuotrauka 2023-06-12 000348](https://github.com/Tpexas/Different-altitude-air-pollution-data-visualization-web-app/assets/103386420/e33f8737-4d95-40a1-b379-606de68cbb82)
+![Ekrano nuotrauka 2023-06-12 000606](https://github.com/Tpexas/Different-altitude-air-pollution-data-visualization-web-app/assets/103386420/d3bca41f-2453-486e-b112-cec195b46a27)
